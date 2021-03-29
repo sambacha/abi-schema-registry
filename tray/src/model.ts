@@ -1,3 +1,5 @@
+/** @file Data Model */
+
 /**
  * Enumeration for supported schema types.
  */
@@ -10,7 +12,7 @@ export enum SchemaType {
  * Enumeration for supported storage networks.
  */
 export enum Network {
-  EvanIpfs = 'evan-ipfs',
+  NodeIpfs = 'node-ipfs',
   PublicIpfs = 'public-ipfs',
 }
 
@@ -30,7 +32,7 @@ export interface SchemaDid {
  */
 export interface ConfigObject {
   publicIpfsConfig?: PublicIpfsConfig;
-  evanRuntimeConfig?: EvanRuntimeConfig;
+  nodeRuntimeConfig?: NodeRuntimeConfig;
 }
 
 /**
@@ -42,9 +44,9 @@ export interface PublicIpfsConfig {
 }
 
 /**
- * Configuration properties related to Evan IPFS.
+ * Configuration properties related to the network'ed Node IPFS.
  */
-export interface EvanRuntimeConfig  {
+export interface NodeRuntimeConfig  {
   accountMap: {
     [key: string]: any;
   }
