@@ -1,0 +1,15 @@
+{
+  "name": "abi-registry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "propertyNames.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "sam",
+  "license": "ISC",
+  "dependencies": {
+    "@exodus/schemasafe": "^1.0.0-rc.3"
+  }
+}
