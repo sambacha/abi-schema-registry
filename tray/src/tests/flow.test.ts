@@ -1,7 +1,8 @@
+/** @file testing */
 import { registerSchema, getSchema } from '../schema-registry';
 import { SchemaType, Network } from '../model';
 import publicIpfsService from '../ipfs/public-ipfs-service';
-import evanIpfsService from '../ipfs/evan-ipfs-service';
+import nodeIpfsService from '../ipfs/node-ipfs-service';
 
 const validJsonSchema = `{
     "$schema": "http://json-schema.org/draft-07/schema#",
@@ -88,23 +89,23 @@ const validXsd = `<?xml version="1.0" encoding="UTF-8" ?>
   
   </xs:schema>`;
 
-describe('Test flow with mocked Evan ipfs', () => {
-  const validDid = 'did:schema:evan-ipfs:json-schema:QmNLei78zWmzUdbeRB3CiUfAizWUrbeeZh5K1rhAQKCh51';
+describe('Test flow with mocked Network Node ipfs', () => {
+  const validDid = 'did:schema:node-ipfs:json-schema:QmNLei78zWmzUdbeRB3CiUfAizWUrbeeZh5K1rhAQKCh51';
 
   it('should register the validJsonSchema', async () => {
-    jest.spyOn(evanIpfsService, 'addSchemaToEvanIpfs').mockReturnValue(Promise.resolve('QmNLei78zWmzUdbeRB3CiUfAizWUrbeeZh5K1rhAQKCh51'));
-    const did = await registerSchema(validJsonSchema, SchemaType.JsonSchema, Network.EvanIpfs);
+    jest.spyOn(nodeIpfsService, 'addSchemaToNodeIpfs').mockReturnValue(Promise.resolve('QmNLei78zWmzUdbeRB3CiUfAizWUrbeeZh5K1rhAQKCh51'));
+    const did = await registerSchema(validJsonSchema, SchemaType.JsonSchema, Network.NodeIpfs);
     expect(did).toBe(validDid);
   });
 
   it('should get the registierd schema', async () => {
-    jest.spyOn(evanIpfsService, 'getSchemaFromEvanIpfs').mockReturnValue(Promise.resolve(validJsonSchema));
+    jest.spyOn(nodeIpfsService, 'getSchemaFromNodeIpfs').mockReturnValue(Promise.resolve(validJsonSchema));
     const schema = await getSchema(validDid)
     expect(schema).toBe(validJsonSchema);
   });
 
   it('should get undefined', async () => {
-    jest.spyOn(evanIpfsService, 'getSchemaFromEvanIpfs').mockReturnValue(undefined);
+    jest.spyOn(nodeIpfsService, 'getSchemaFromNodeIpfs').mockReturnValue(undefined);
     expect(await getSchema(validDid)).toBeUndefined();
   });
 
@@ -172,3 +173,4 @@ describe('Test all possible variation of getSchema ', () => {
   });
 
 });
+//** @exports Testing Schema */
