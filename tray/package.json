@@ -12,7 +12,7 @@
     "test": "npx jest --config jest.config.json"
   },
   "author": "SEE CONTRIBUTORS",
-  "license": "Apache-2.0",
+  "license": "GPL-v2.0",
   "dependencies": {
     "@exodus/schemasafe": "^1.0.0-rc.2",
     "bl": "^4.0.3",
