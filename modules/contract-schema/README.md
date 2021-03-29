@@ -9,7 +9,7 @@
 formally specified<sup>[1](#footnote-1)</sup> JSON object format to represent
 Ethereum Virtual Machine (EVM) smart contracts. This representation is intended
 to facilitate the use of general purpose smart contract abstractions
-(such as @truffle/contract) by capturing relevant smart contract information in a
+(such as @truffle/contract) by capturing relnodet smart contract information in a
 persistent and portable manner.
 
 Objects following this schema represent individual smart contracts as defined

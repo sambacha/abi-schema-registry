@@ -1,7 +1,7 @@
 import { SchemaDid, Network, SchemaType } from '../model';
 import { InvalidInput } from '../exceptions/invalid-input.exception';
 
-const didRegEx = /^did:schema:(evan-ipfs|public-ipfs):((json-schema|xsd):)?([0-9a-zA-Z._-]+)$/
+const didRegEx = /^did:schema:(node-ipfs|public-ipfs):((json-schema|xsd):)?([0-9a-zA-Z._-]+)$/
 
 /**
  * Validate whether the given DID complies to the schema DID method.

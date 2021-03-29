@@ -42,9 +42,9 @@ it("preserves via a recipe that depends on another recipe", async () => {
     })
   );
 
-  const relevantEvents = allEvents.filter(
+  const relnodetEvents = allEvents.filter(
     ({ scope }) => scope[0] === "vowels-counter-recipe"
   );
 
-  expect(relevantEvents).toEqual(expectedEventsForVowelsCounterRecipe);
+  expect(relnodetEvents).toEqual(expectedEventsForVowelsCounterRecipe);
 });

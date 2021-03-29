@@ -1,7 +1,7 @@
 import { SchemaType, Network, ConfigObject } from './model';
 import { validateSchemaDid, parseSchemaDid } from './did/did-utils';
 import { validateSchemaType } from './schema-types/schema-validator';
-import evanIpfsService from './ipfs/evan-ipfs-service';
+import nodeIpfsService from './ipfs/node-ipfs-service';
 import publicIpfsService from './ipfs/public-ipfs-service';
 import { InvalidInput } from './exceptions/invalid-input.exception';
 
@@ -31,8 +31,8 @@ export async function registerSchema(schemaContent: string, schemaType: SchemaTy
   let did = 'did:schema:' + network.toString() + ':' + schemaType.toString() + ':';
   let schemaHash: string;
   switch (network) {
-    case Network.EvanIpfs: {
-      schemaHash = await evanIpfsService.addSchemaToEvanIpfs(schemaContent);
+    case Network.NodeIpfs: {
+      schemaHash = await nodeIpfsService.addSchemaToNodeIpfs(schemaContent);
       break;
     }
     case Network.PublicIpfs: {
@@ -57,8 +57,8 @@ export async function getSchema(did: string): Promise<string> {
   let schemaAsString: string;
   const didObject = parseSchemaDid(did);
   switch (didObject.network) {
-    case Network.EvanIpfs:
-      schemaAsString = await evanIpfsService.getSchemaFromEvanIpfs(didObject.hash);
+    case Network.NodeIpfs:
+      schemaAsString = await nodeIpfsService.getSchemaFromNodeIpfs(didObject.hash);
       break;
     case Network.PublicIpfs:
       schemaAsString = await publicIpfsService.getSchemaFromPublicIpfs(didObject.hash);
