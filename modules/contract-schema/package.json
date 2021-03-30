@@ -2,12 +2,6 @@
   "name": "@truffle/contract-schema",
   "description": "JSON schema for contract artifacts",
   "license": "MIT",
-  "author": "Tim Coulter <tim@trufflesuite.com>",
-  "homepage": "https://github.com/trufflesuite/truffle/tree/master/packages/contract-schema#readme",
-  "repository": "https://github.com/trufflesuite/truffle/tree/master/packages/contract-schema",
-  "bugs": {
-    "url": "https://github.com/trufflesuite/truffle/issues"
-  },
   "version": "3.3.4",
   "main": "index.js",
   "directories": {
@@ -15,8 +9,8 @@
   },
   "scripts": {
     "build": "sh ./scripts/generate-declarations",
-    "prepare": "yarn run build",
-    "test": "mocha"
+    "prepare": "npm run build",
+    "test": "npx mocha"
   },
   "typings": "./typings/index.d.ts",
   "dependencies": {
