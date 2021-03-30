@@ -2,8 +2,8 @@
 import { registerSchema, getSchema } from '../schema-registry';
 import { SchemaType, Network } from '../model';
 import publicIpfsService from '../ipfs/public-ipfs-service';
-import nodeIpfsService from '../ipfs/node-ipfs-service';
 
+/** @const validJsonSchema */
 const validJsonSchema = `{
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "http://example.com/product.schema.json",
@@ -88,28 +88,6 @@ const validXsd = `<?xml version="1.0" encoding="UTF-8" ?>
   <xs:element name="shiporder" type="shipordertype"/>
   
   </xs:schema>`;
-
-describe('Test flow with mocked Network Node ipfs', () => {
-  const validDid = 'did:schema:node-ipfs:json-schema:QmNLei78zWmzUdbeRB3CiUfAizWUrbeeZh5K1rhAQKCh51';
-
-  it('should register the validJsonSchema', async () => {
-    jest.spyOn(nodeIpfsService, 'addSchemaToNodeIpfs').mockReturnValue(Promise.resolve('QmNLei78zWmzUdbeRB3CiUfAizWUrbeeZh5K1rhAQKCh51'));
-    const did = await registerSchema(validJsonSchema, SchemaType.JsonSchema, Network.NodeIpfs);
-    expect(did).toBe(validDid);
-  });
-
-  it('should get the registierd schema', async () => {
-    jest.spyOn(nodeIpfsService, 'getSchemaFromNodeIpfs').mockReturnValue(Promise.resolve(validJsonSchema));
-    const schema = await getSchema(validDid)
-    expect(schema).toBe(validJsonSchema);
-  });
-
-  it('should get undefined', async () => {
-    jest.spyOn(nodeIpfsService, 'getSchemaFromNodeIpfs').mockReturnValue(undefined);
-    expect(await getSchema(validDid)).toBeUndefined();
-  });
-
-});
 
 describe('Test flow with mocked Public Ipfs', () => {
   const validDid = 'did:schema:public-ipfs:json-schema:QmNLei78zWmzUdbeRB3CiUfAizWUrbeeZh5K1rhAQKCh51';
