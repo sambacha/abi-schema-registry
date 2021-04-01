@@ -1,7 +1,6 @@
 {
-  "name": "@truffle/preserve",
+  "name": "abi-preserve",
   "version": "0.1.1",
-  "description": "Library for functionality for `truffle preserve` command",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
   "files": [
@@ -13,11 +12,9 @@
     "test": "jest --verbose --detectOpenHandles",
     "docs": "./scripts/generate-docs"
   },
-  "repository": "https://github.com/trufflesuite/truffle/tree/master/packages/preserve",
-  "author": "g. nicholas d'andrea <gnidan@trufflesuite.com>",
   "license": "MIT",
   "publishConfig": {
-    "access": "public"
+    "access": "private"
   },
   "devDependencies": {
     "@types/jest": "26.0.22",
@@ -25,6 +22,7 @@
     "iter-tools": "7.1.1",
     "jest": "26.6.3",
     "ts-jest": "26.5.4",
+    "typedoc": "^0.20.34",
     "typescript": "3.9.9"
   },
   "dependencies": {

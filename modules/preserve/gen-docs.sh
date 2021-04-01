@@ -1,7 +1,5 @@
 #!/bin/bash
 
-typedoc=./node_modules/.bin/typedoc
-
 DIST_HTML=./dist/docs
 DIST_JSON=./dist/api.json
 
@@ -17,7 +15,7 @@ MEDIA=./docs/media
 
 rm -rf $DIST_HTML $DIST_JSON
 
-$typedoc \
+npx typedoc \
     --options $OPTIONS \
     --tsconfig $TSCONFIG \
     --out $DIST_HTML \
