@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/sambacha/abi-schema-registry#readme",
   "devDependencies": {
-    "ast-types": "^0.14.2",
-    "lerna": "^4.0.0",
-    "prettier": "^2.2.1"
+    "ast-types": "0.14.2",
+    "lerna": "4.0.0",
+    "prettier": "2.2.1"
   }
 }
