@@ -33,6 +33,6 @@
     "mocha-suppress-logs": "^0.2.0",
     "nyc": "^15.0.1",
     "prettier": "^2.2.1",
-    "sinon": "^9.0.2"
+    "sinon": "10.0.0"
   }
 }
