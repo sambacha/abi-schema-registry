@@ -17,7 +17,7 @@
     "access": "private"
   },
   "devDependencies": {
-    "@types/jest": "26.0.22",
+    "@types/jest": "26.0.23",
     "@types/node": "14.14.37",
     "iter-tools": "7.1.1",
     "jest": "26.6.3",
