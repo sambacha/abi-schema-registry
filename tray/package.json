@@ -16,7 +16,7 @@
   "dependencies": {
     "@evan.network/api-blockchain-core": "^2.20.0",
     "@exodus/schemasafe": "1.0.0-rc.3",
-    "ajv": "^6.12.6",
+    "ajv": "8.6.0",
     "bl": "4.1.0",
     "ipfs": "0.46.1",
     "tslog": "2.12.0",
