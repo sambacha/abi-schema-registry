@@ -20,7 +20,7 @@
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
-    "@truffle/contract": "4.3.12",
+    "@truffle/contract": "4.3.20",
     "@types/fs-extra": "8.1.1",
     "@types/lodash.assign": "4.2.6",
     "@types/lodash.merge": "4.6.6",
